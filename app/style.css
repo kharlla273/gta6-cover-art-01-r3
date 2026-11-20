@@ -1,0 +1,258 @@
+/* Palm City Cover Studio — editor chrome.
+   Dark UI with neon pink and cyan accents, in the poster's mood. */
+
+@font-face {
+  font-family: "Anton";
+  src: url("fonts/Anton-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pacifico";
+  src: url("fonts/Pacifico-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #0c0c16;
+  color: #f2f0ff;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+.topbar {
+  padding: 18px 28px 12px;
+  border-bottom: 1px solid #26263a;
+  background: linear-gradient(90deg, #160a2e, #0c0c16 60%);
+}
+
+.topbar h1 {
+  margin: 0;
+  font-family: "Anton", "Arial Black", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.topbar h1 span {
+  color: #ff2e88;
+}
+
+.tagline {
+  margin: 4px 0 0;
+  color: #a7a3c2;
+  font-size: 14px;
+}
+
+.studio {
+  display: flex;
+  gap: 24px;
+  padding: 20px 28px 32px;
+  align-items: flex-start;
+}
+
+.controls {
+  width: 320px;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.group {
+  background: #171728;
+  border: 1px solid #26263a;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.group h2 {
+  margin: 0 0 10px;
+  font-family: "Anton", "Arial Black", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffd166;
+}
+
+.hint {
+  margin: 10px 0 0;
+  color: #a7a3c2;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+.file-btn {
+  display: block;
+  text-align: center;
+  background: #ff2e88;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.file-btn:hover { background: #ff4d9d; }
+
+button {
+  font: inherit;
+  color: #f2f0ff;
+  background: #23233a;
+  border: 1px solid #34345a;
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+button:hover { border-color: #ff2e88; }
+
+#fillAllBtn { width: 100%; }
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.choice.active {
+  background: #ff2e88;
+  border-color: #ff2e88;
+  color: #fff;
+}
+
+.tray {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.thumb {
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumb.active {
+  outline: 3px solid #22d3ee;
+  outline-offset: 1px;
+}
+
+.field {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #c9c5e8;
+}
+
+.field input[type="text"],
+.field input:not([type="range"]) {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  border: 1px solid #34345a;
+  background: #0f0f1e;
+  color: #f2f0ff;
+  font: inherit;
+}
+
+.field input[type="range"] {
+  width: 100%;
+  accent-color: #ff2e88;
+}
+
+.check {
+  display: block;
+  font-size: 13.5px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.check input { accent-color: #ff2e88; }
+
+.export {
+  width: 100%;
+  margin-top: 4px;
+  padding: 13px;
+  font-size: 16px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff2e88, #ff7518);
+  border: none;
+  color: #fff;
+}
+
+.export:hover { filter: brightness(1.1); }
+
+.preview-wrap {
+  flex: 1;
+  min-width: 0;
+  position: sticky;
+  top: 20px;
+}
+
+#previewCanvas {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 150px);
+  margin: 0 auto;
+  border-radius: 6px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.preview-hint {
+  text-align: center;
+  color: #a7a3c2;
+  font-size: 13px;
+}
+
+/* Screenshot scene: the cover alone, full frame. */
+body.shot-cover {
+  background: #000;
+}
+
+body.shot-cover .topbar,
+body.shot-cover .controls,
+body.shot-cover .preview-hint {
+  display: none;
+}
+
+body.shot-cover .studio {
+  padding: 0;
+  display: block;
+}
+
+body.shot-cover .preview-wrap {
+  position: static;
+}
+
+body.shot-cover #previewCanvas {
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@media (max-width: 900px) {
+  .studio { flex-direction: column; }
+  .controls { width: 100%; }
+  .preview-wrap { position: static; }
+}

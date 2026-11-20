@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palm City Cover Studio — GTA-style cover art maker</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23160a2e'/%3E%3Ccircle cx='16' cy='19' r='8' fill='%23ff7518'/%3E%3Crect y='19' width='32' height='13' fill='%23ff2e88' opacity='.55'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <h1>Palm City <span>Cover Studio</span></h1>
+  <p class="tagline">Turn any photo into poster-style cover art. It runs offline — your photos never leave this machine.</p>
+</header>
+<main class="studio">
+  <section class="controls" id="controls">
+    <div class="group">
+      <h2>1 · Photos</h2>
+      <label class="file-btn">Add your photos
+        <input type="file" id="photoInput" accept="image/*" multiple hidden>
+      </label>
+      <button id="fillAllBtn" type="button">Fill every panel with the selected photo</button>
+      <div class="tray" id="photoTray"></div>
+      <p class="hint">Click a photo, then click a panel to place it. Drag a panel to reposition its photo, scroll to zoom.</p>
+    </div>
+    <div class="group">
+      <h2>2 · Layout</h2>
+      <div class="choices" id="layoutChoices"></div>
+    </div>
+    <div class="group">
+      <h2>3 · Colour grade</h2>
+      <div class="choices" id="gradeChoices"></div>
+    </div>
+    <div class="group">
+      <h2>4 · Caption</h2>
+      <label class="field">Title
+        <input id="titleInput" maxlength="24" value="OCEAN DRIVE">
+      </label>
+      <label class="field">Subtitle
+        <input id="subtitleInput" maxlength="40" value="vice coast stories">
+      </label>
+      <label class="check"><input type="checkbox" id="badgeToggle" checked> Star badge</label>
+      <label class="check"><input type="checkbox" id="frameToggle" checked> Poster frame</label>
+    </div>
+    <div class="group">
+      <h2>5 · Size &amp; export</h2>
+      <div class="choices" id="sizeChoices"></div>
+      <button id="exportBtn" class="export" type="button">Export PNG</button>
+      <p class="hint" id="exportNote"></p>
+    </div>
+    <div class="group">
+      <h2>Selected panel</h2>
+      <p class="hint" id="panelLabel">Click a panel in the preview to tune it.</p>
+      <label class="field">Zoom
+        <input type="range" id="zoomRange" min="1" max="2.5" step="0.05" value="1">
+      </label>
+      <div class="choices" id="panelPhotoChoices"></div>
+    </div>
+  </section>
+  <section class="preview-wrap">
+    <canvas id="previewCanvas"></canvas>
+    <p class="preview-hint">Live preview — drag inside a panel to move its photo, scroll to zoom, click to place the selected photo.</p>
+  </section>
+</main>
+<script src="src/cover.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>
