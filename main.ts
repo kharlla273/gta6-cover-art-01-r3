@@ -30,7 +30,9 @@ function copyTree(source: string, dest: string): void {
 }
 
 function main(): void {
-  rmSync(OUT, { recursive: true, force: true });
+  rmSync(join(OUT, "app"), { recursive: true, force: true });
+  rmSync(join(OUT, "screenshots"), { recursive: true, force: true });
+  rmSync(join(OUT, "dossier.json"), { force: true });
   mkdirSync(OUT, { recursive: true });
   copyTree(join(ROOT, "app"), join(OUT, "app"));
   copyTree(join(ROOT, "screenshots"), join(OUT, "screenshots"));
