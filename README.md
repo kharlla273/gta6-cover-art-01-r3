@@ -1,8 +1,8 @@
 # Palm City Cover Studio
 
 [![make.fun](https://make.fun/badge/gta6-cover-art-01.svg)](https://make.fun/c/gta6-cover-art-01)
-[![rank](https://make.fun/badge/gta6-cover-art-01/kharlla273/gta6-cover-art-01-r3/rank.svg)](https://make.fun/bounty/gta6-cover-art-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
-[![reward](https://make.fun/badge/gta6-cover-art-01/kharlla273/gta6-cover-art-01-r3/reward.svg)](https://make.fun/bounty/gta6-cover-art-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
+[![Rank](https://make.fun/api/badges/rank.svg?owner=kharlla273&repo=gta6-cover-art-01-r3&competition=gta6-cover-art-01)](https://make.fun/bounty/gta6-cover-art-01)
+[![Reward](https://make.fun/api/badges/reward.svg?owner=kharlla273&repo=gta6-cover-art-01-r3&competition=gta6-cover-art-01)](https://make.fun/bounty/gta6-cover-art-01)
 
 An offline web app that turns any photo and a caption into GTA-style
 multi-panel cover art, exported as a PNG to share. Built for the
